@@ -1,7 +1,7 @@
 const pregunta = document.getElementById("quiz-question")
 const answerButtons = document.querySelectorAll(".answer-button");
 
-
+let hasBeenEvented = false;
 
 
 
@@ -46,11 +46,11 @@ const preguntas = [
 
 
 
-function loadQuesiton(){
+function loadQuestion(){
 
     const questionNumber = Math.floor(Math.random() * preguntas.length);
 
-
+    console.log("El question number es:", questionNumber)
     valoresPreguntas = Object.values(preguntas[questionNumber])
 
 
@@ -73,30 +73,57 @@ function loadQuesiton(){
     }
 
     changeButtons()
+    answerButtons.forEach((value) => {
+        value.removeAttribute("disabled", "");
+    });
 
 
     function clickButton(clicked){
 
-        console.log("aaa" , clicked.innerText , preguntas[questionNumber].opcionCorrecta)
+        console.log("aaa" , clicked.innerText , "cuestion:", questionNumber, preguntas[questionNumber].opcionCorrecta)
         if(clicked.innerText === preguntas[questionNumber].opcionCorrecta){
-            console.log("Ganaste")
+        
             clicked.classList.add("correct")
 
-            changeQuestion(clicked, questionNumber)
+
+            if(clicked.classList.contains("correct")){
+                changeQuestion(clicked, questionNumber)
+            }
+            console.log("Ganaste")
+
         }
-        else{
+        else if(clicked.innerText !== preguntas[questionNumber].opcionCorrecta){
+
+
 
             clicked.classList.add("incorrect")
-            changeQuestion(clicked, questionNumber)
+            
+            if(clicked.classList.contains("incorrect")){
+                changeQuestion(clicked, questionNumber)
+            }
+
 
         }
+        answerButtons.forEach((value) => {
+            value.setAttribute("disabled", "");
+        });
 
     }
-    answerButtons.forEach( boton => boton.addEventListener("click", (e)=>{
-        clickButton(e.target)
 
+    if(!hasBeenEvented){
+        answerButtons.forEach( boton => boton.addEventListener("click", (e)=>{
+            clickButton(e.target)
+            e.stopPropagation()
+    
+    
+        },false))
+    }
+    else{
+        return
+    }
 
-    },false))
+    hasBeenEvented = true;
+
     
 
   
@@ -106,21 +133,17 @@ function loadQuesiton(){
 
 
 function changeQuestion(clicked, questionNumber){
-    
+    preguntas.splice(questionNumber,1)
     setTimeout( ()=>{
 
         clicked.classList.remove("correct")
         clicked.classList.remove("incorrect")
 
-        if(preguntas.length > 0){
-            preguntas.splice(questionNumber,1)
-            loadQuesiton()
-        }else{
-            document.body.innerHTML = "RAJA DE ACA YA TERMINÓ"
-        }
+          
+        loadQuestion()
 
 
     }, 3000)
 }
 
-loadQuesiton()
+loadQuestion()
