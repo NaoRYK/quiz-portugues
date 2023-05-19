@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugueados - Jogo do Preguntas</title>
+    <link rel="stylesheet" href="./public/style.css">
+    <script async src="./public/index.js"></script>
+</head>
+<body>
+    
+    <div id="animated-background"></div>
+    <div id="container-main">
+            <div class="titulos">
+                <img id="subtitulo" src="./images/portugueados.png"></img>
+            
+            </div>
+            
+            <div id="login">
+                <form id="login-form" action="">
+                    <label  for="">Introduza nome de utilizador</label>
+                    <input placeholder="Nome de utilizador" type="text" name="" value="">
+                </form>
+            </div>
+            
+            <div id="container-button-play">
+                <button class="button-play" id="buttonPlay">JOGAR</button>
+            </div>
+    </div>
+
+
+
+
+
+<div class="question-area"  id="question-area"> 
+
+    <dia class="question-container">
+        <div class="container-pointer">
+            <ul>
+                <li><div class="check"></div></li>
+                <li><p class="pointer-correct-question">0</p></li>
+                <li><div class="incorrect-check"></div></li>
+                <li><p class="pointer-incorrect-question">0</p></li>
+            </ul>
+        </div>
+
+        <div class="question-text">
+            
+            <p id="questionP">soy la pregunta</p>
+        </div>
+        
+
+
+        <div class="question-container-div" >
+            
+            <button class="option-button option-hover">
+                <div class="optionContainer">
+                    
+                    <p id="buttonText1" class="option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>    
+            </button>
+            <button  class="option-button option-hover">
+                <div class="optionContainer">
+                    
+                    <p id="buttonText2" class="option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>    
+            </button>
+            
+            <button  class="option-button option-hover">
+                <div class="optionContainer">
+                    
+                    <p id="buttonText3" class="option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>    
+            </button>
+            
+            <button class="option-button option-hover">
+                <div class="optionContainer">
+                    <p id="buttonText4" class="option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>    
+            </button>
+            
+            
+        </div>
+        
+
+    </div>
+</div>
+
+</body>
+</html>
