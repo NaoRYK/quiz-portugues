@@ -5,44 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link rel="stylesheet" href="./style.css">
+    
 </head>
 <body>
+    
+<div class="titulos">
+    <h1 id="titulo">QUIZ APP</h1>
+    <h1 id="subtitulo">Cultura General</h1>
 
-    <section id="main-container">
-        <div id="quiz-container">
-            <div id="quiz-question">
-                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, vero?</h2>
-            </div>
+</div>
 
-            <div id="quiz-answers">
-                <div class="answer">
-                    <button class="answer-button">
-                        Soy la pregunta
-                    </button>
-                </div>
-                <div class="answer">
-                    <button class="answer-button">
-                        Soy la pregunta
-                    </button>
-                </div>
-                <div class="answer">
-                    <button class="answer-button">
-                        Soy la pregunta
-                    </button>
-                </div>
-                <div class="answer">
-                    <button class="answer-button">
-                        Soy la pregunta
-                    </button>
-                </div>
+<div id="container-button-play"><button class="button-play" id="buttonPlay">JUGAR</button></div>
 
 
-            </div>
+
+
+<div class="question-area"  id="question-area"> 
+
+    <dia class="question-container">
+        <div class="container-pointer">
+            <ul>
+                <li><div class="check"></div></li>
+                <li><p class="pointer-correct-question">0</p></li>
+                <li><div class="incorrect-check"></div></li>
+                <li><p class="pointer-incorrect-question">0</p></li>
+            </ul>
         </div>
-    </section>
 
-    <script src="../src/index.js"></script>
+        <div class="question-text">
+            
+            <p id="questionP">soy la pregunta</p>
+        </div>
+        
+
+
+        <div class="question-container-div" >
+            
+            <button class="option-button option-hover">
+                <div class="optionContainer">
+                    
+                    <p id="buttonText1" class="option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>    
+            </button>
+            <button  class="option-button option-hover">
+                <div class="optionContainer">
+                    
+                    <p id="buttonText2" class="option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>    
+            </button>
+            
+            <button  class="option-button option-hover">
+                <div class="optionContainer">
+                    
+                    <p id="buttonText3" class="option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>    
+            </button>
+            
+            <button class="option-button option-hover">
+                <div class="optionContainer">
+                    <p id="buttonText4" class="option-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>    
+            </button>
+            
+            
+        </div>
+        
+
+    </div>
+</div>
+<script src="../src/index.js"></script>
 </body>
 </html>
