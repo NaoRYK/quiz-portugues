@@ -122,6 +122,7 @@ pregunta15 = {
 
 const buttonPlay = document.getElementById("buttonPlay");
 const containerbuttonplay = document.getElementById("container-button-play");
+const containerArea = document.getElementById("container-main")
 const questionArea = document.getElementById("question-area");
 questionArea.style.display = "none";
 const htmlQuestion = document.getElementById("questionP");
@@ -135,8 +136,8 @@ const btn2 = document.getElementById("buttonText2");
 const btn3 = document.getElementById("buttonText3");
 const btn4 = document.getElementById("buttonText4");
 
-const croos = document.querySelector(".pointer-incorrect-question");
-const check = document.querySelector(".pointer-correct-question");
+
+const pointsCounter = document.getElementById("points-counter")
 
 
 var buttons = document.querySelectorAll("button");
@@ -146,11 +147,12 @@ let numeroAnterior = 0;
 var number = 0;
 let longitudListaPalabras = listaPalabras.length-1;
 
-let numberofCorrectPoints = 0;
-let numberofIncorrectPoints = 0;
+let points = 0;
+
 
 buttonPlay.addEventListener("click", () => {
-containerbuttonplay.style.display = "none";
+containerArea.style.display = "none";
+
 questionArea.style.display = "flex";
 preguntas(number);
 });
@@ -169,10 +171,10 @@ function forPreguntas(){
             });
             if(value.innerText === listaPalabras[number].respuestaCorrecta){
                 
-                numberofCorrectPoints += 1;
-                check.innerText= String(numberofCorrectPoints);
+                points += 1;
+                pointsCounter.innerText= String(points)+ "/20";
                 
-                value.setAttribute("style", "background: #74d974;");
+                value.setAttribute("style", "background: #1992198d;");
 
                 cambiarPalabra = true;
                 setTimeout(()=>{
@@ -191,7 +193,7 @@ function forPreguntas(){
 
                     buttons.forEach((values)=>{
                         values.removeAttribute("disabled","");
-                        value.setAttribute("style", "background: #f0f0f0;");
+                        value.setAttribute("style", "background: rgba(106, 88, 88, 0.41);");
                     });
 
                     aleatorio = Math.floor(Math.random() * longitudListaPalabras);
@@ -201,9 +203,8 @@ function forPreguntas(){
                     
                 },1500);
             }else{
-                numberofIncorrectPoints += 1;
-                croos.innerText = numberofIncorrectPoints;
-                value.setAttribute("style", "background: #e97272;");
+
+                value.setAttribute("style", "background: #570606;");
                 cambiarPalabra = true;
                 setTimeout(()=>{
                     
@@ -224,7 +225,7 @@ function forPreguntas(){
 
                         buttons.forEach((values)=>{
                             values.removeAttribute("disabled","");
-                            value.setAttribute("style", "background: #f0f0f0;");
+                            value.setAttribute("style", "background: rgba(106, 88, 88, 0.41);");
                         });
 
                         aleatorio = Math.floor(Math.random() * longitudListaPalabras);
