@@ -1,3 +1,12 @@
+
+@font-face{
+    font-family:"Berlin sans FB";
+    src:url("../fonts/04434_BerlinSansFBDemiBold.ttf");
+}
+:root{
+    --primary-red:rgb(185, 96, 120);
+    --secondary-red:#6b162d;
+}
 *{
     margin: 0;
 
@@ -5,37 +14,100 @@
 
     box-sizing: border-box;
     border-radius: 4px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Berlin sans FB, impact;
 }
-
+html{
+    font-size: 62.5%;
+}
 body{
-    background-image:url(https://www.elegircarrera.net/blog/wp-content/uploads/2018/01/areas-de-conocimiento.jpg);
+    background: rgb(171,16,57);
+    background: radial-gradient(circle, rgba(171,16,57,1) 0%, rgba(29,29,29,1) 100%);
     background-repeat: no-repeat;
     object-fit: cover;
     background-position: center;
     width: 100vw;
-    height: 90vh;   
+    height: 100vh;   
+    overflow-y: hidden;
 }
 
-#container-button-play{
+#container-main{
+    height: 100%;
+    display: grid;
     justify-content: center;
-    margin-top: 20%;
+    grid-template-rows: 45% 18% 30%;
 }
+
+#animated-background{
+    z-index: -1;
+    opacity: .12;
+    top: -1px;
+    height: 100vh;
+    width: 100vw;
+    animation: translateBg linear  15s infinite;
+    position: absolute;
+    background-size: contain;
+    background-image: url(../images/istockphoto-1207060223-612x612-removebg-preview.png);
+}
+
+#login{
+    justify-self: center;
+    align-self: self-start;
+}
+
+#login-form{
+    display: grid;
+}
+
+#login-form label{
+    color: var(--primary-red);
+    text-align: center;
+    font-size: 3.4rem;
+}
+
+#login-form input {
+    border:none;
+    height: 6rem;
+    width: 45rem;
+    padding-left: 10px;
+    font-size: 2.2rem;
+    outline-color:var(--primary-red) ;
+    color: var(--primary-red);
+}
+
+
+
+
+#container-button-play{
+    justify-self: center;
+    align-self: self-start;
+}
+
 
 .button-play{
     width: 400px;
     height: 70px;
+    color: var(--primary-red);
+    border: solid 2.7px;
+    background-color: var(--secondary-red);
+    border-radius: 10px;
+    cursor: help;
+    transition: .10s all  ease;
+    font-size: 2.3rem;
+}
+.button-play:hover{
+    transform: scale(1.12);
 }
 
 
 
-.titulos{
-    margin-top: 2%;
-    -webkit-text-stroke: 0.2px black;
-    border: 1px rgb(255, 255, 255) solid;
-    border-radius: 4px;
-    background:rgba(32, 198, 210, 0.503);   
 
+.titulos{
+
+    justify-self: center;
+}
+
+.titulos img{
+    height: 120%;
 }
 
 h1{
@@ -117,7 +189,7 @@ h1{
     transform: scale(1.05);
 }
 .option-text::before{
-    content:counter(index); 
+    content: counter(index) "-"; 
     margin: 3px;
     color : #d14;
 }
@@ -194,3 +266,15 @@ h1{
 }
 
 
+@keyframes translateBg{
+    0% {
+        background-position: 0px;
+     }
+     100% {
+        background-position: -2125px;
+     }
+
+
+
+
+  }
