@@ -174,7 +174,7 @@ function forPreguntas(){
                 points += 1;
                 pointsCounter.innerText= String(points)+ "/20";
                 
-                value.setAttribute("style", "background: #1992198d;");
+                value.setAttribute("style", "background: #1992198d !important; ");
 
                 cambiarPalabra = true;
                 setTimeout(()=>{
@@ -204,7 +204,7 @@ function forPreguntas(){
                 },1500);
             }else{
 
-                value.setAttribute("style", "background: #570606;");
+                value.setAttribute("style", "background: #570606 !important;");
                 cambiarPalabra = true;
                 setTimeout(()=>{
                     

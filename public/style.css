@@ -16,6 +16,8 @@
     border-radius: 4px;
     font-family: Berlin sans FB, impact;
 }
+
+
 html{
     font-size: 62.5%;
 }
@@ -202,7 +204,7 @@ h1{
 
 }
 .option-hover:hover{
-    background-color: rgba(255, 0, 255, 0.185);
+    background-color: rgba(255, 0, 255, 0.185) !important;
     transform: scale(1.05);
 }
 .option-text::before{
