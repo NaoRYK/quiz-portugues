@@ -122,6 +122,7 @@ pregunta15 = {
 
 const buttonPlay = document.getElementById("buttonPlay");
 const containerbuttonplay = document.getElementById("container-button-play");
+console.log(containerbuttonplay)
 containerbuttonplay.style.display = "flex";
 const questionArea = document.getElementById("question-area");
 questionArea.style.display = "none";
