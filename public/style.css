@@ -58,6 +58,7 @@ body{
 
 #login-form{
     display: grid;
+    justify-items: center;
 }
 
 #login-form label{
@@ -69,7 +70,7 @@ body{
 #login-form input {
     border:none;
     height: 6rem;
-    width: 45rem;
+    width: 80%;
     padding-left: 10px;
     font-size: 2.2rem;
     outline-color:var(--primary-red) ;
@@ -86,8 +87,9 @@ body{
 
 
 .button-play{
-    width: 400px;
+    width: 15rem;
     height: 70px;
+    margin-top: 2rem;
     color: var(--primary-red);
     border: solid 2.7px;
     background-color: var(--secondary-red);
@@ -106,10 +108,11 @@ body{
 .titulos{
 
     justify-self: center;
+    max-width: 100vw;
 }
 
 .titulos img{
-    height: 120%;
+    height: 100%;
 }
 
 h1{
@@ -203,10 +206,12 @@ h1{
     background-color: rgba(106, 88, 88, 0.41)  ;
 
 }
-.option-hover:hover{
+.option-hover:active{
     background-color: rgba(255, 0, 255, 0.185) !important;
     transform: scale(1.05);
 }
+
+
 .option-text::before{
    
     content: counter(index) "-"; 
@@ -219,9 +224,9 @@ h1{
 }
 
 .container-points{
-   
-    padding: 1.5rem;
+
     margin: 0.5rem;
+    margin-bottom: 10%;
 }
 
 #points-counter{
@@ -300,4 +305,65 @@ h1{
 
 
 
+}
+
+
+
+  @media (max-width:550px) {
+    
+
+    .titulos img{
+        height: 80%;
+    }
+    .button-play{
+        margin-top: 4rem;
+    }
+
+    .option-text {
+        font-size: 2.2rem;
+    }
+  }
+
+  @media (max-width:370px) {
+    
+    #subtitulo{
+        max-width: 100%;
+    }
+    .button-play{
+        margin-top: 30%;
+    }
+
+
+        /*Juego  */
+    .question-text{
+        min-height: 115%;
+    }
+
+    .container-points{
+        margin:0;
+        margin-bottom: 10%;
+        padding: 0;
+    }
+  }
+
+  
+  @media (max-width:320px) {
+    .option-text {
+        font-size: 1.7rem;
+    }
+    #points-counter{
+        font-size: 3.5rem;
+    }
+    #subtitulo{
+        max-width: 100%;
+    }
+    .button-play{
+        margin-top: 35%;
+    }
+
+    #points-counter{
+        font-size: 3.5rem;
+    }
+
+    
   }

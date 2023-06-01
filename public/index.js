@@ -168,6 +168,7 @@ function forPreguntas(){
         value.onclick = ()=>{
             buttons.forEach((values)=>{
                 values.setAttribute("disabled","");
+                values.classList.remove("option-hover")
             });
             if(value.innerText === listaPalabras[number].respuestaCorrecta){
                 
@@ -193,7 +194,8 @@ function forPreguntas(){
 
                     buttons.forEach((values)=>{
                         values.removeAttribute("disabled","");
-                        value.setAttribute("style", "background: rgba(106, 88, 88, 0.41);");
+                        values.setAttribute("style", "background: rgba(106, 88, 88, 0.41);");
+                        values.classList.add("option-hover")
                     });
 
                     aleatorio = Math.floor(Math.random() * longitudListaPalabras);
@@ -225,7 +227,8 @@ function forPreguntas(){
 
                         buttons.forEach((values)=>{
                             values.removeAttribute("disabled","");
-                            value.setAttribute("style", "background: rgba(106, 88, 88, 0.41);");
+                            values.setAttribute("style", "background: rgba(106, 88, 88, 0.41);");
+                            values.classList.add("option-hover")
                         });
 
                         aleatorio = Math.floor(Math.random() * longitudListaPalabras);
