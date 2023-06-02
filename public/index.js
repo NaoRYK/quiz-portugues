@@ -207,6 +207,8 @@ function forPreguntas(){
             }else{
 
                 value.setAttribute("style", "background: #570606 !important;");
+                points += 1;
+                pointsCounter.innerText= String(points)+ "/20";
                 cambiarPalabra = true;
                 setTimeout(()=>{
                     
