@@ -157,14 +157,48 @@ let correctPoints = 0;
 
 const userInput = document.getElementById("user-input")
 
-buttonPlay.addEventListener("click", playGame)
-;
+buttonPlay.addEventListener("click", playGame);
+
+//API
+const URL = "https://portugueados-server-8szouyopa-noinblake.vercel.app/api/v1/";
+
+async function scoreboard (){
+  const res = await fetch(`${URL}scoreboard`);
+  const data = await res.json();
+  console.log(data);
+};
+
+async function login(playerName){
+  const res = await fetch(`${URL}login`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({name:`${playerName}`})
+  })
+}
+
+async function score(){
+  const res = await fetch(`${URL}score`,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({
+      name:"pedro",
+      score:20,
+    })
+  })
+}
+//FIN API
 
 
 async function playGame(){
 
     let playerName = userInput.value;
-    login(playerName)
+    try{
+        login(playerName)
+    }
+    catch(error){
+        console.error("El error es", error)
+
+    }
 
 
     containerArea.style.display = "none";
@@ -174,8 +208,7 @@ async function playGame(){
 
 
 function botones() {
-console.log(listaPalabras)
-console.log(longitudListaPalabras)
+
 function forPreguntas(){
     
     buttons.forEach((value)=>{
@@ -199,10 +232,10 @@ function forPreguntas(){
                     listaPalabras.forEach((value, index)=>{
                         if(number === index){
                             if(listaPalabras.length === 0){
-                                console.log(listaPalabras[index]);
+                                
                                 listaPalabras.splice(0,1)
                             }else{
-                                console.log(listaPalabras[index]);
+                               
                                 listaPalabras.splice(index,1);
                             }
                         }
@@ -234,10 +267,10 @@ function forPreguntas(){
                         listaPalabras.forEach((value, index)=>{
                             if(number === index){
                                 if(listaPalabras.length === 0){
-                                    console.log(listaPalabras[index]);
+                                    
                                     listaPalabras.splice(0,1)
                                 }else{
-                                    console.log(listaPalabras[index]);
+                                    
                                     listaPalabras.splice(index,1);
                                 }
                             }
@@ -267,7 +300,7 @@ return forPreguntas();
 }
 
 function preguntas(random) {
-console.log("lista de la funcion preguntas", listaPalabras)
+
 if(listaPalabras.length === 0){
     questionContainerDiv.style.display = "none";
     questionContainerDiv.style.height = "300px";

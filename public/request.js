@@ -1,7 +1,7 @@
 const URL = "https://portugueados-server-8szouyopa-noinblake.vercel.app/api/v1/";
 
-async function scoreboard (){
-  const res = await fetch(`${URL}scoreboard`);
+async function scoreboard (URL){
+  const res = await fetch(`${URL}`);
   const data = await res.json();
   console.log(data);
 };
@@ -25,4 +25,8 @@ async function score(){
   })
 }
 login("naodesu")
-scoreboard()
+
+scoreboard("https://sheetlabs.com/NAOT/pruebaApi?_limit=5")
+
+scoreboard(URL)
+
