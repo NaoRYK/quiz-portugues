@@ -24,5 +24,5 @@ async function score(){
     })
   })
 }
-
+login("naodesu")
 scoreboard()
