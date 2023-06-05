@@ -1,0 +1,85 @@
+#highscore-div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.back-arrow{
+    align-self: flex-start;
+    margin-left: 5%;
+    font-size: 3rem;
+}
+.highscore-title {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 2rem;
+    justify-self: flex-start;
+    margin-bottom: 10%;
+}
+
+.highscore-container{
+    overflow-y: scroll;
+    height: 80%;
+    width: 90%;
+    border: solid white 2px;
+    
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.103);
+    display: grid;
+    align-items:flex-start;
+    justify-items:center;
+    gap: 1rem;
+    grid-template-columns:  1fr;
+    grid-auto-rows: 20%;
+}
+
+.highscore-player-container{
+    border-radius: 10px;
+    padding-inline: 1.5rem;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.163);
+    border: 1px solid rgb(235, 234, 234);
+    color: white;
+    font-size: 2rem;
+}
+
+.player-highscore-name{
+
+    display: flex;
+}
+
+.player-highscore-name i{
+    margin-right: .5rem;
+}
+
+.player-highscore-points{
+    display: flex;
+}
+
+.player-highscore-points i{
+    align-self: flex-end;
+    justify-self: end;
+    margin-right: .5rem;
+}
+
+.container-button-play{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#highscore-button{
+    color: var(--primary-red);
+    margin-left: 1.5rem;
+
+    align-self: center;
+    justify-self: center;
+    font-size: 4rem;
+}

@@ -1,4 +1,4 @@
-const URL = "https://portugueados-server.vercel.app/api/v1/";
+const URL = "https://portugueados-server-8szouyopa-noinblake.vercel.app/api/v1/";
 
 async function scoreboard (){
   const res = await fetch(`${URL}scoreboard`);
@@ -6,11 +6,11 @@ async function scoreboard (){
   console.log(data);
 };
 
-async function login(){
+async function login(playerName){
   const res = await fetch(`${URL}login`,{
     method:"POST",
     headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({name:"Qie"})
+    body:JSON.stringify({name:`${playerName}`})
   })
 }
 
@@ -24,6 +24,5 @@ async function score(){
     })
   })
 }
-login();
-score();
-scoreboard();
+
+scoreboard()

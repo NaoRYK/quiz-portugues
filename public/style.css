@@ -206,10 +206,10 @@ h1{
     background-color: rgba(106, 88, 88, 0.41)  ;
 
 }
-.option-hover:active{
+/* .option-hover:hover{
     background-color: rgba(255, 0, 255, 0.185) !important;
     transform: scale(1.05);
-}
+} */
 
 
 .option-text::before{

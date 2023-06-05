@@ -130,17 +130,22 @@ const htmlQuestion = document.getElementById("questionP");
 const questionContainerDiv  = document.querySelector(".question-container-div");
 questionContainerDiv.style.display = "flex";
 
+const highscoreArea = document.getElementById("highscore-div");
 
 const btn1 = document.getElementById("buttonText1");
 const btn2 = document.getElementById("buttonText2");
 const btn3 = document.getElementById("buttonText3");
 const btn4 = document.getElementById("buttonText4");
 
+const backButton = document.getElementById("back-arrow");
+const highscoreButton = document.getElementById("highscore-button")
 
 const pointsCounter = document.getElementById("points-counter")
 
 
 var buttons = document.querySelectorAll("button");
+
+
 
 let cambiarPalabra = false;
 let numeroAnterior = 0;
@@ -148,15 +153,24 @@ var number = 0;
 let longitudListaPalabras = listaPalabras.length-1;
 
 let points = 0;
+let correctPoints = 0;
+
+const userInput = document.getElementById("user-input")
+
+buttonPlay.addEventListener("click", playGame)
+;
 
 
-buttonPlay.addEventListener("click", () => {
-containerArea.style.display = "none";
+async function playGame(){
 
-questionArea.style.display = "flex";
-preguntas(number);
-});
+    let playerName = userInput.value;
+    login(playerName)
 
+
+    containerArea.style.display = "none";
+     questionArea.style.display = "flex";
+    preguntas(number);
+}
 
 
 function botones() {
@@ -171,7 +185,10 @@ function forPreguntas(){
                 values.classList.remove("option-hover")
             });
             if(value.innerText === listaPalabras[number].respuestaCorrecta){
-                
+                //TODO puntos correctos
+                correctPoints+=1;
+
+                console.log("Aciertos", correctPoints)
                 points += 1;
                 pointsCounter.innerText= String(points)+ "/20";
                 
@@ -272,3 +289,19 @@ if(listaPalabras.length === 0){
     
 }
 
+
+function openHighscore(){
+    questionArea.style.display = "none";
+    containerArea.style.display = "none";
+    highscoreArea.style.display= "flex";
+}
+
+function openHome(){
+    questionArea.style.display = "flex";
+    containerArea.style.display = "grid";
+    highscoreArea.style.display= "none";
+}
+
+backButton.addEventListener("click", openHome)
+highscoreButton.addEventListener("click", openHighscore)
+openHome()

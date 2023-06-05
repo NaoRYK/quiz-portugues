@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portugueados - Jogo do Preguntas</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="highscore.css">
     <script async src="./index.js"></script>
-    <script async src="./request.js"></script>
+    <script async type="module" src="./request.js"></script>
+    <script src="https://kit.fontawesome.com/a6672c6b64.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     
     <div id="animated-background"></div>
-    <div id="container-main">
+    <div id="container-main";">
             <div class="titulos">
                 <img id="subtitulo" src="./images/portugueados.png"></img>
             
@@ -21,12 +24,13 @@
             <div id="login">
                 <form id="login-form" action="">
                     <label  for="">Introduza nome de utilizador</label>
-                    <input placeholder="Nome de utilizador" type="text" name="" value="">
+                    <input id="user-input" placeholder="Nome de utilizador" type="text" name="" value="">
                 </form>
             </div>
             
             <div id="container-button-play">
                 <button class="button-play" id="buttonPlay">JOGAR</button>
+                <i class="fa-solid fa-list" id="highscore-button" ></i>
             </div>
     </div>
 
@@ -78,10 +82,136 @@
             
             
         </div>
+
+
         
 
     </div>
 </div>
+
+    <div id="highscore-div">
+        <i class="fa-solid fa-arrow-left back-arrow" id="back-arrow" style="color: #ffffff;"></i>
+        <div class="highscore-title">
+
+            <h1>Pontuações</h1>
+        </div>
+
+        <div class="highscore-container">
+            
+            <div class="highscore-player-container">
+                <div class="player-highscore-name">
+                    <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    <p class="player-name">Juan</p>
+
+                </div>
+                <div class="player-highscore-points">
+                    <i class="fa-solid fa-check"></i>
+                    <p class="player-points">21</p>
+                    
+                </div>
+            </div>
+            <div class="highscore-player-container">
+                <div class="player-highscore-name">
+                    <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    <p class="player-name">Hernesto</p>
+
+                </div>
+                <div class="player-highscore-points">
+                    <i class="fa-solid fa-check"></i>
+                    <p class="player-points">21</p>
+                    
+                </div>
+
+            </div>
+            
+            <div class="highscore-player-container">
+                <div class="player-highscore-name">
+                    <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    <p class="player-name">Mario</p>
+
+                </div>
+                <div class="player-highscore-points">
+                    <i class="fa-solid fa-check"></i>
+                    <p class="player-points">21</p>
+                    
+                </div>
+            </div>
+            <div class="highscore-player-container">
+                <div class="player-highscore-name">
+                    <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    <p class="player-name">1234567890124</p>
+                    
+                </div>
+                <div class="player-highscore-points">
+                    <i class="fa-solid fa-check"></i>
+                    <p class="player-points">20</p>
+                    
+                </div>
+            </div>
+            <div class="highscore-player-container">
+                <div class="player-highscore-name">
+                    <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    <p class="player-name">1234567890124</p>
+                    
+                </div>
+                <div class="player-highscore-points">
+                    <i class="fa-solid fa-check"></i>
+                    <p class="player-points">20</p>
+                    
+                </div>
+            </div>
+            <div class="highscore-player-container">
+                <div class="player-highscore-name">
+                    <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    <p class="player-name">1234567890124</p>
+                    
+                </div>
+                <div class="player-highscore-points">
+                    <i class="fa-solid fa-check"></i>
+                    <p class="player-points">20</p>
+                    
+                </div>
+            </div>
+            <div class="highscore-player-container">
+                <div class="player-highscore-name">
+                    <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    <p class="player-name">1234567890124</p>
+                    
+                </div>
+                <div class="player-highscore-points">
+                    <i class="fa-solid fa-check"></i>
+                    <p class="player-points">20</p>
+                    
+                </div>
+            </div>
+            <div class="highscore-player-container">
+                <div class="player-highscore-name">
+                    <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    <p class="player-name">1234567890124</p>
+                    
+                </div>
+                <div class="player-highscore-points">
+                    <i class="fa-solid fa-check"></i>
+                    <p class="player-points">20</p>
+                    
+                </div>
+            </div>
+            <div class="highscore-player-container">
+                <div class="player-highscore-name">
+                    <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                    <p class="player-name">1234567890124</p>
+                    
+                </div>
+                <div class="player-highscore-points">
+                    <i class="fa-solid fa-check"></i>
+                    <p class="player-points">20</p>
+                    
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 
 </body>
 </html>
