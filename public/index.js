@@ -150,6 +150,7 @@ const pointsCounter = document.getElementById("points-counter")
 const userInput = document.getElementById("user-input");
 
 const loaderScore = document.querySelector(".loader");
+
 var buttons = document.querySelectorAll("button");
 
 
@@ -168,9 +169,8 @@ let playerName;
 
 // PASO 1: Login
 const playGame = async () => {
-
     playerName = userInput.value;
-    console.log(playerName)
+    if(playerName === "") return;
     containerArea.setAttribute("style", "display: none !important; ");
     highscoreArea.setAttribute("style", "display: none !important; ");
     questionArea.style.display = "flex";
@@ -308,14 +308,16 @@ const openHighscore = () => {
     return getData(renderHighscore, URL);
 };
 
-const openHome = () => {
+const openHome = () => {   
     questionArea.style.display = "flex";
     containerArea.style.display = "grid";
     highscoreArea.style.display = "none";
-    highscoreContainer.innerHTML = "";
+    highscoreContainer.innerHTML="";
+    userInput.value = "";
 }
 
 const sendData = async (name, points) => {
+
     try{
         const res = await fetch(`${URL}score`, {
             method: "POST",
@@ -345,7 +347,7 @@ const sendData = async (name, points) => {
 };
 
 const getData = () => {
-    loaderScore.classList.add("hidden")
+    highscoreContainer.innerHTML="<div class='loader'></div>";
     const GetDataCode=(data)=>{
         const nombres = {};
         const objetosSinDuplicados = {};
@@ -366,6 +368,7 @@ const getData = () => {
         });
     }
     setTimeout(async () => {
+        highscoreContainer.innerHTML="<div class='loader hidden'></div>";
         try{
             const res = await fetch(`${URL}scoreboard`);
             const data = await res.json();

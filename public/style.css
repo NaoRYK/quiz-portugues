@@ -37,6 +37,11 @@ body{
     display: grid;
     justify-content: center;
     grid-template-rows: 45% 18% 30%;
+    position: relative;
+}
+
+#message{
+    position: absolute;
 }
 
 #animated-background{
