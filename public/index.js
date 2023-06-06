@@ -345,7 +345,7 @@ const sendData = async (name, points) => {
 };
 
 const getData = () => {
-    
+    loaderScore.classList.add("hidden")
     const GetDataCode=(data)=>{
         const nombres = {};
         const objetosSinDuplicados = {};
