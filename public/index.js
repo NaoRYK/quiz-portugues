@@ -1,5 +1,3 @@
-
-
 const URL = "https://portugueados-server.vercel.app/api/v1/";
 
 let listaPalabras = [
@@ -151,6 +149,7 @@ const pointsCounter = document.getElementById("points-counter")
 
 const userInput = document.getElementById("user-input");
 
+const loaderScore = document.querySelector(".loader");
 var buttons = document.querySelectorAll("button");
 
 
@@ -168,8 +167,8 @@ let correctPoints = 0;
 let playerName;
 
 // PASO 1: Login
-const playGame=async()=>{
-    
+const playGame = async () => {
+
     playerName = userInput.value;
     console.log(playerName)
     containerArea.setAttribute("style", "display: none !important; ");
@@ -188,15 +187,26 @@ const playGame=async()=>{
         });
     } catch (error) {
         console.error("El error es", error);
+        if(error){
+            const res = await fetch(`${URL}login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: `${playerName}`
+                })
+            });
+        };
     };
     preguntas(number);
 };
 
 // PASO 2: Traer preguntas del array;
-const preguntas=(random)=> {
+const preguntas = (random) => {
 
     if (listaPalabras.length === 0) {
-        sendData(playerName,correctPoints);
+        sendData(playerName, correctPoints);
         openHighscore();
     } else {
         htmlQuestion.innerText = listaPalabras[random].texto;
@@ -210,7 +220,7 @@ const preguntas=(random)=> {
 
 // PASO 3: Logica de botones
 const botones = () => {
-    const forPreguntas = ()=>{
+    const forPreguntas = () => {
         buttons.forEach((value) => {
             value.onclick = () => {
                 buttons.forEach((values) => {
@@ -233,7 +243,7 @@ const botones = () => {
                             if (number === index) {
                                 if (listaPalabras.length === 0) {
                                     listaPalabras.splice(0, 1)
-                                }else {
+                                } else {
                                     listaPalabras.splice(index, 1);
                                 };
                             };
@@ -291,60 +301,90 @@ const botones = () => {
 
 
 
-const openHighscore=()=>{
+const openHighscore = () => {
     questionArea.style.display = "none";
     containerArea.style.display = "none";
     highscoreArea.style.display = "flex";
-    return getData(renderHighscore,URL);
+    return getData(renderHighscore, URL);
 };
 
-const openHome=()=>{
+const openHome = () => {
     questionArea.style.display = "flex";
     containerArea.style.display = "grid";
     highscoreArea.style.display = "none";
-    highscoreContainer.innerHTML="";
+    highscoreContainer.innerHTML = "";
 }
 
 const sendData = async (name, points) => {
-    const res = await fetch(`${URL}score`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: `${name}`,
-            score: points,
+    try{
+        const res = await fetch(`${URL}score`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: `${name}`,
+                score: points,
+            })
         })
-    });
+    }catch(err){
+        if(err){
+            console.log("error"+err);
+            const res = await fetch(`${URL}score`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: `${name}`,
+                    score: points,
+                })
+            });
+        }
+    }
 };
 
-const getData =() => {
-    setTimeout(async()=>{
-        const res = await fetch(`${URL}scoreboard`);
-        const data = await res.json();
-        console.log(data)
+const getData = () => {
+    
+    const GetDataCode=(data)=>{
         const nombres = {};
         const objetosSinDuplicados = {};
-        
+
         data.forEach(objeto => {
-          if (!nombres[objeto.nombre] || objeto.puntos > objetosSinDuplicados[objeto.nombre].puntos) {
-            nombres[objeto.nombre] = true;
-            objetosSinDuplicados[objeto.nombre] = objeto;
-          }
+            if (!nombres[objeto.nombre] || objeto.puntos > objetosSinDuplicados[objeto.nombre].puntos) {
+                nombres[objeto.nombre] = true;
+                objetosSinDuplicados[objeto.nombre] = objeto;
+            }
         });
-        
+
         const arraySinDuplicados = Object.values(objetosSinDuplicados);
         const arrayOrdenado = arraySinDuplicados.sort((a, b) => b.puntos - a.puntos);
 
         console.log(arrayOrdenado)
-        arrayOrdenado.map(items=>{
+        arrayOrdenado.map(items => {
             renderHighscore(items);
         });
-    },1000)
+    }
+    setTimeout(async () => {
+        try{
+            const res = await fetch(`${URL}scoreboard`);
+            const data = await res.json();
+            console.log(data);
+            GetDataCode(data);
+        }catch(err){
+            if(err){
+                const res = await fetch(`${URL}scoreboard`);
+                const data = await res.json();
+                console.log(data);
+                GetDataCode(data);
+            }
+        }
+        
+    }, 2000)
 };
 
 
-const renderHighscore = (object)=>{
+const renderHighscore = (object) => {
     return highscoreContainer.innerHTML += `
     <div class="highscore-player-container">
         <div class="player-highscore-name">
@@ -364,18 +404,17 @@ const renderHighscore = (object)=>{
 
 
 
-if(backButton !== null){
+if (backButton !== null) {
     backButton.addEventListener("click", openHome, false);
 }
-if(highscoreButton !== null){
+if (highscoreButton !== null) {
     highscoreButton.addEventListener("click", openHighscore, false);
 }
 
 
-window.addEventListener("click", (e)=>{
+window.addEventListener("click", (e) => {
     e.preventDefault();
-    if(e.target.id !== "buttonPlay") return;
+    if (e.target.id !== "buttonPlay") return;
     console.log(e);
     playGame();
 }, false);
-
