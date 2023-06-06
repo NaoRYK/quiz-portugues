@@ -29,54 +29,87 @@ const pointsCounter = document.getElementById("points-counter");
 const userInput = document.getElementById("user-input");
 
 const loaderScore = document.querySelector(".loader");
-
-var buttons = document.querySelectorAll("button");
+// const loaderQuestion = document.getElementById("loader");
+// if(loaderQuestion.classList.contains="hidden"){
+//     loaderQuestion.classList.remove("hidden");
+// }
+var buttons = document.querySelectorAll(".option-button");
 
 
 
 let cambiarPalabra = false;
 let numeroAnterior = 0;
 var number = 0;
-let longitudListaPalabras = listaPalabras.length - 1;
+let longitudListaPalabras;
 
 let points = 0;
 let correctPoints = 0;
 
 
-
+let templatePreguntas;
 let playerName;
 
+
+function resetGame(){
+    points = 0;
+    correctPoints=0;
+    templatePreguntas = [...listaPalabras];
+    console.log(templatePreguntas)
+    longitudListaPalabras =  templatePreguntas.length - 1;
+    console.log("longitud", longitudListaPalabras)
+}
 // PASO 1: Login
-const playGame = async () => {
-    playerName = userInput.value;
-    if(playerName === "") return;
-    containerArea.setAttribute("style", "display: none !important; ");
-    highscoreArea.setAttribute("style", "display: none !important; ");
-    questionArea.style.display = "flex";
-    try {
-        //login
-        await login(URL,playerName);
-    } catch (error) {
-        console.error("El error es", error);
-        if(error){
-            await login(URL,playerName);
+
+function executeGame(){
+    resetGame();
+
+    const playGame = async () => {
+    
+        
+        playerName = userInput.value;
+        if(playerName === "") return;
+        containerArea.setAttribute("style", "display: none !important; ");
+        highscoreArea.setAttribute("style", "display: none !important; ");
+        setTimeout(() => {
+            // loaderQuestion.classList.add("hidden");
+            questionArea.style.display = "flex";
+        }, 1000);
+        try {
+    
+            //login
+            setTimeout(async()=>{
+                await login(URL,playerName);
+            },1000);
+            
+        } catch (error) {
+            console.error("El error es", error);
+            if(error){
+                login(URL,playerName);
+            };
         };
+        
+        preguntas(number);
+    
     };
-    preguntas(number);
-};
+    playGame()
+}
+
 
 // PASO 2: Traer preguntas del array;
 const preguntas = (random) => {
-
-    if (listaPalabras.length === 0) {
+    if (templatePreguntas.length === 0) {
+        console.log("True")
         sendData(playerName, correctPoints,URL);
         openHighscore();
+
     } else {
-        htmlQuestion.innerText = listaPalabras[random].texto;
-        btn1.innerText = listaPalabras[random].opcion1;
-        btn2.innerText = listaPalabras[random].opcion2;
-        btn3.innerText = listaPalabras[random].opcion3;
-        btn4.innerText = listaPalabras[random].opcion4;
+
+        console.log("ELSE")
+        htmlQuestion.innerText = templatePreguntas[random].texto;
+        btn1.innerText = templatePreguntas[random].opcion1;
+        btn2.innerText = templatePreguntas[random].opcion2;
+        btn3.innerText = templatePreguntas[random].opcion3;
+        btn4.innerText = templatePreguntas[random].opcion4;
         botones();
     };
 };
@@ -90,7 +123,7 @@ const botones = () => {
                     values.setAttribute("disabled", "");
                     values.classList.remove("option-hover");
                 });
-                if (value.innerText === listaPalabras[number].respuestaCorrecta) {
+                if (value.innerText === templatePreguntas[number].respuestaCorrecta) {
                     //TODO puntos correctos
                     correctPoints += 1;
 
@@ -102,12 +135,12 @@ const botones = () => {
 
                     cambiarPalabra = true;
                     setTimeout(() => {
-                        listaPalabras.forEach((value, index) => {
+                        templatePreguntas.forEach((value, index) => {
                             if (number === index) {
-                                if (listaPalabras.length === 0) {
-                                    listaPalabras.splice(0, 1)
+                                if (templatePreguntas.length === 0) {
+                                    templatePreguntas.splice(0, 1)
                                 } else {
-                                    listaPalabras.splice(index, 1);
+                                    templatePreguntas.splice(index, 1);
                                 };
                             };
                         });
@@ -131,12 +164,12 @@ const botones = () => {
                     cambiarPalabra = true;
                     setTimeout(() => {
                         if (cambiarPalabra === true) {
-                            listaPalabras.forEach((value, index) => {
+                            templatePreguntas.forEach((value, index) => {
                                 if (number === index) {
-                                    if (listaPalabras.length === 0) {
-                                        listaPalabras.splice(0, 1);
+                                    if (templatePreguntas.length === 0) {
+                                        templatePreguntas.splice(0, 1);
                                     } else {
-                                        listaPalabras.splice(index, 1);
+                                        templatePreguntas.splice(index, 1);
                                     };
                                 };
                             });
@@ -168,7 +201,7 @@ const openHighscore = () => {
     questionArea.style.display = "none";
     containerArea.style.display = "none";
     highscoreArea.style.display = "flex";
-    return getData(highscoreContainer, URL,renderHighscore);
+    getData(highscoreContainer, URL,renderHighscore);
 };
 
 const openHome = () => {   
@@ -214,5 +247,5 @@ window.addEventListener("click", (e) => {
     e.preventDefault();
     if (e.target.id !== "buttonPlay") return;
     console.log(e);
-    playGame();
+    executeGame();
 }, false);

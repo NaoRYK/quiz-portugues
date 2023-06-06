@@ -78,7 +78,7 @@ export const getData = (container,URL,callback) => {
                 GetDataCode(data);
             }
         }
-        
+
     }, 2000)
 };
 
