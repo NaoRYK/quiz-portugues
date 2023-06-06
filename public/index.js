@@ -322,18 +322,20 @@ const getData =() => {
     setTimeout(async()=>{
         const res = await fetch(`${URL}scoreboard`);
         const data = await res.json();
-
+        console.log(data)
         const nombres = {};
-        const arraySinDuplicados = [];
+        const objetosSinDuplicados = {};
         
         data.forEach(objeto => {
-          if (!nombres[objeto.nombre]) {
+          if (!nombres[objeto.nombre] || objeto.puntos > objetosSinDuplicados[objeto.nombre].puntos) {
             nombres[objeto.nombre] = true;
-            arraySinDuplicados.push(objeto);
+            objetosSinDuplicados[objeto.nombre] = objeto;
           }
         });
         
+        const arraySinDuplicados = Object.values(objetosSinDuplicados);
         const arrayOrdenado = arraySinDuplicados.sort((a, b) => b.puntos - a.puntos);
+
         console.log(arrayOrdenado)
         arrayOrdenado.map(items=>{
             renderHighscore(items);
