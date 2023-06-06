@@ -322,8 +322,20 @@ const getData =() => {
     setTimeout(async()=>{
         const res = await fetch(`${URL}scoreboard`);
         const data = await res.json();
+
+        const nombres = {};
+        const arraySinDuplicados = [];
         
-        data.map(items=>{
+        data.forEach(objeto => {
+          if (!nombres[objeto.nombre]) {
+            nombres[objeto.nombre] = true;
+            arraySinDuplicados.push(objeto);
+          }
+        });
+        
+        const arrayOrdenado = arraySinDuplicados.sort((a, b) => b.puntos - a.puntos);
+        console.log(arrayOrdenado)
+        arrayOrdenado.map(items=>{
             renderHighscore(items);
         });
     },1000)

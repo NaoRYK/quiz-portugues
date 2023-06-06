@@ -83,3 +83,7 @@
     justify-self: center;
     font-size: 4rem;
 }
+
+#highscore-button:hover{
+    cursor: pointer;
+}
