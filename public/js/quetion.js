@@ -1,116 +1,117 @@
 let listaPalabras = [
-    pregunta1 = {
-        texto: "¿Cuál es el lugar más frío de la tierra?",
-        opcion1: "Rusia",
-        opcion2: "Indonesia",
-        opcion3: "Noruega",
-        opcion4: "Antartida",
-        respuestaCorrecta: "Antartida"
-    },
-    pregunta2 = {
-        texto: "¿Quién escribió La Odisea?",
-        opcion1: "homero",
-        opcion2: "Caridad Bravo Adams",
-        opcion3: "Abel Santa Cruz",
-        opcion4: "James Joyce",
-        respuestaCorrecta: "homero"
-    },
-    pregunta3 = {
-        texto: "¿Cómo se llama la capital de Mongolia?",
-        opcion1: "Jujuy",
-        opcion2: "AfganistánKabul",
-        opcion3: "Ulan Bator",
-        opcion4: "AnguilaThe Valley",
-        respuestaCorrecta: "Ulan Bator"
-    }
-    // pregunta4 = {
-    //     texto: "¿Cómo se denomina el resultado de la multiplicación?",
-    //     opcion1: "producto",
-    //     opcion2: "sustracción",
-    //     opcion3: "reactivo",
-    //     opcion4: "adición",
-    //     respuestaCorrecta: "producto"
-    // },
-    // pregunta5 = {
-    //     texto: "¿Cual es el oceano mas grande del mundo?",
-    //     opcion1: "Atlantico",
-    //     opcion2: "Indico",
-    //     opcion3: "Pacifico",
-    //     opcion4: "Artico",
-    //     respuestaCorrecta: "Pacifico"
-    // },
-    // pregunta6 = {
-    //     texto: "En que año llego Cristobal Colon a America?",
-    //     opcion1: "1492",
-    //     opcion2: "1501",
-    //     opcion3: "1490",
-    //     opcion4: "1600",
-    //     respuestaCorrecta: "1492"
-    // },
-    // pregunta7 = {
-    //     texto: "¿Quien es el padre del psicoanalisis?",
-    //     opcion1: "William James",
-    //     opcion2: "Hippolyte Bernheim",
-    //     opcion3: "Sigmund Freud",
-    //     opcion4: "Jean Piaget",
-    //     respuestaCorrecta: "Sigmund Freud"
-    // },
-    // pregunta8 = {
-    //     texto: "¿Que estudia la cartografia?",
-    //     opcion1: "Estudia la produccion de cartones",
-    //     opcion2: "Estudia las estrellas",
-    //     opcion3: "Estudia la escritura de cartas",
-    //     opcion4: "Estudia los mapas",
-    //     respuestaCorrecta: "Estudia los mapas"
-    // },
-    // pregunta9 = {
-    //     texto: "¿Cual es el pais mas grande del mundo?",
-    //     opcion1: "Rusia",
-    //     opcion2: "Brasil",
-    //     opcion3: "China",
-    //     opcion4: "Estados Unidos",
-    //     respuestaCorrecta: "Rusia"
-    // },
-    // pregunta10 = {
-    //     texto: "¿En Donde esta ubicada la torre Eiffel?",
-    //     opcion1: "Francia",
-    //     opcion2: "España",
-    //     opcion3: "Dinamarca",
-    //     opcion4: "Italia",
-    //     respuestaCorrecta: "Francia"
-    // },
-    // pregunta11 = {
-    //     texto: "¿Que deporte practicaba Michael Jordan?",
-    //     opcion1: "Rugby",
-    //     opcion2: "Boxeo",
-    //     opcion3: "Futbol",
-    //     opcion4: "Basket",
-    //     respuestaCorrecta: "Basket"
-    // },
-    // pregunta12 = {
-    //     texto: "¿En que año comenzo la II guerra mundial?",
-    //     opcion1: "1943",
-    //     opcion2: "1939",
-    //     opcion3: "1941",
-    //     opcion4: "1993",
-    //     respuestaCorrecta: "1939"
-    // },
-    // pregunta13 = {
-    //     texto: "¿Cual es el pais con mas poblacion de la tierra?",
-    //     opcion1: "Estados Unidos",
-    //     opcion2: "Rusia",
-    //     opcion3: "China",
-    //     opcion4: "Brasil",
-    //     respuestaCorrecta: "China"
-    // },
-    // pregunta14 = {
-    //     texto: "¿Quien fue el general de los nazis en la segunda guerra mundial?",
-    //     opcion1: "Bin Laden",
-    //     opcion2: "Adolf Hitler",
-    //     opcion3: "Napoleon",
-    //     opcion4: "John F Kennedy",
-    //     respuestaCorrecta: "Adolf Hitler"
-    // },
+    //conjunciones
+    pregunta1={
+        texto: "Qual é o pronome?",
+        opcion1: "Eu",
+        opcion2: "Você",
+        opcion3: "Nós",
+        opcion4: "Todas las anteriores",
+        respuestaCorrecta: "Todas las anteriores"
+      },
+      pregunta2={
+        texto: "Que conjugação é a terminação '-ir'?",
+        opcion1: "Faz",
+        opcion2: "Nós",
+        opcion3: "3° conjugação",
+        opcion4: "Ninguna de las anteriores",
+        respuestaCorrecta: "3° conjugação"
+      },
+      pregunta3={
+        texto: 'Complete a seguinte frase "Eu __ (tomar) Eite com cereais".',
+        opcion1: "Beber",
+        opcion2: "Tomo",
+        opcion3: "Toma",
+        opcion4: "Ele",
+        respuestaCorrecta: "Tomo"
+      },
+      pregunta4={
+        texto: "Quais são os verbos irregulares?",
+        opcion1: "Ser",
+        opcion2: "Amar",
+        opcion3: "Ela",
+        opcion4: "Todas las anteriores",
+        respuestaCorrecta: "Ser"
+      },
+      pregunta5={
+        texto: "Quais são os verbos regulares?",
+        opcion1: "Amar",
+        opcion2: "Comer",
+        opcion3: "Partir",
+        opcion4: "Todas las anteriores",
+        respuestaCorrecta: "Todas las anteriores"
+      },
+      pregunta6={
+        texto: "Qual é um pronome indireto?",
+        opcion1: "Aquela",
+        opcion2: "Essas",
+        opcion3: "Quantos",
+        opcion4: "Você",
+        respuestaCorrecta: "Quantos"
+      },
+      pregunta7={
+        texto: "Qual é um pronome direto?",
+        opcion1: "Quem",
+        opcion2: "Isto",
+        opcion3: "Que",
+        opcion4: "Vou",
+        respuestaCorrecta: "Quem"
+      },
+      pregunta8={
+        texto: "Qual é o advérbio interrogativo que indica um lugar?",
+        opcion1: "Como",
+        opcion2: "Ali",
+        opcion3: "Onde",
+        opcion4: "Quando",
+        respuestaCorrecta: "Onde"
+      },
+      pregunta9={
+        texto: "Qual advérbio interrogativo é usado para perguntar sobre a maneira como algo é feito?",
+        opcion1: "Como",
+        opcion2: "Cual",
+        opcion3: "Está",
+        opcion4: "Qual",
+        respuestaCorrecta: "Como"
+      },
+      pregunta10={
+        texto: "Qual é o advérbio interrogativo que indica o tempo?",
+        opcion1: "Quando",
+        opcion2: "É",
+        opcion3: "Esse",
+        opcion4: "Por que",
+        respuestaCorrecta: "Quando"
+      },
+      pregunta11={
+        texto: "Qual é o advérbio interrogativo usado para perguntar sobre a razão ou motivo de algo?",
+        opcion1: "Por que",
+        opcion2: "Como",
+        opcion3: "Aqui",
+        opcion4: "Onde",
+        respuestaCorrecta: "Por que"
+      },
+      pregunta12={
+        texto: "Qual é a forma interrogativa correta da frase 'Ela vai ao cinema'?",
+        opcion1: "Quando ela vai ao cinema?",
+        opcion2: "Porque ela vai ao cinema?",
+        opcion3: "Como ela vai ao cinema?",
+        opcion4: "Onde ela vai ao cinema?",
+        respuestaCorrecta: "Quando ela vai ao cinema?"
+      },
+      pregunta13={
+        texto: "Complete a seguinte pergunta interrogativa: '__ está o parque'?",
+        opcion1: "Onde",
+        opcion2: "Como",
+        opcion3: "Aqui",
+        opcion4: "Por que",
+        respuestaCorrecta: "Onde"
+      },
+      pregunta14={
+        texto: "Qual é o significado do advérbio interrogativo 'por que'?",
+        opcion1: "É utilizado para perguntar sobre a causa ou motivo de algo",
+        opcion2: "É utilizado para perguntar sobre o tempo de algo",
+        opcion3: "É utilizado para perguntar sobre o modo",
+        opcion4: "É utilizado para perguntar sobre o lugar",
+        respuestaCorrecta: "É utilizado para perguntar sobre a causa ou motivo de algo"
+      }
     // pregunta15 = {
     //     texto: "¿Cual es el primer numerp primo?",
     //     opcion1: "5",

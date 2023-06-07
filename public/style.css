@@ -316,7 +316,9 @@ h1{
 
   @media (max-width:550px) {
     
-
+    .optionContainer p{
+        letter-spacing: normal;
+    }
     .titulos img{
         height: 80%;
         width:100%;
