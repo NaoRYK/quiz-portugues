@@ -29,10 +29,11 @@ const pointsCounter = document.getElementById("points-counter");
 const userInput = document.getElementById("user-input");
 
 const loaderScore = document.querySelector(".loader");
-// const loaderQuestion = document.getElementById("loader");
-// if(loaderQuestion.classList.contains="hidden"){
-//     loaderQuestion.classList.remove("hidden");
-// }
+
+const loaderQuestion = document.getElementById("loader");
+loaderQuestion.setAttribute("style", "display: flex !important; ");
+const fatherQuestion = document.getElementById('father-question');
+fatherQuestion.setAttribute("style", "display: none !important; ");
 var buttons = document.querySelectorAll(".option-button");
 
 
@@ -71,11 +72,14 @@ function executeGame(){
         containerArea.setAttribute("style", "display: none !important; ");
         highscoreArea.setAttribute("style", "display: none !important; ");
         setTimeout(() => {
-            // loaderQuestion.classList.add("hidden");
             questionArea.style.display = "flex";
+            setTimeout(()=>{
+                loaderQuestion.setAttribute("style", "display: none !important; ");
+                fatherQuestion.setAttribute("style", "display: flex !important; ");
+            },1000)
         }, 1000);
         try {
-    
+            
             //login
             setTimeout(async()=>{
                 await login(URL,playerName);
@@ -98,13 +102,10 @@ function executeGame(){
 // PASO 2: Traer preguntas del array;
 const preguntas = (random) => {
     if (templatePreguntas.length === 0) {
-        console.log("True")
         sendData(playerName, correctPoints,URL);
         openHighscore();
 
     } else {
-
-        console.log("ELSE")
         htmlQuestion.innerText = templatePreguntas[random].texto;
         btn1.innerText = templatePreguntas[random].opcion1;
         btn2.innerText = templatePreguntas[random].opcion2;
