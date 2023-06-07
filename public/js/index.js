@@ -31,9 +31,9 @@ const userInput = document.getElementById("user-input");
 const loaderScore = document.querySelector(".loader");
 
 const loaderQuestion = document.getElementById("loader");
-loaderQuestion.setAttribute("style", "display: flex !important; ");
+loaderQuestion.setAttribute("style", "display: flex !important;");
 const fatherQuestion = document.getElementById('father-question');
-fatherQuestion.setAttribute("style", "display: none !important; ");
+fatherQuestion.setAttribute("style", "display: none !important;");
 var buttons = document.querySelectorAll(".option-button");
 
 
@@ -82,6 +82,7 @@ function executeGame(){
             
             //login
             setTimeout(async()=>{
+                
                 await login(URL,playerName);
             },1000);
             
@@ -202,6 +203,8 @@ const openHighscore = () => {
     questionArea.style.display = "none";
     containerArea.style.display = "none";
     highscoreArea.style.display = "flex";
+    loaderQuestion.setAttribute("style", "display: flex !important;");
+    fatherQuestion.setAttribute("style", "display: none !important; ");
     getData(highscoreContainer, URL,renderHighscore);
 };
 
