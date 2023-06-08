@@ -66,7 +66,7 @@ async function theNameIsExisting(inputName){
         const response = await  fetch(`${URL}updateScore/${inputName}`);
         const data = await response.json();
         if(data.length >0){
-            console.log("SI")
+           
 
             if(data[0].nombre===inputName){
                 loadingLogic();
@@ -74,7 +74,7 @@ async function theNameIsExisting(inputName){
             }
         }else{
             try {
-                console.log("NO")
+               
                 //login
                 setTimeout(async()=>{
                     await login(URL,inputName);
@@ -96,9 +96,9 @@ function resetGame(){
     points = 0;
     correctPoints=0;
     templatePreguntas = [...listaPalabras];
-    console.log(templatePreguntas)
+   
     longitudListaPalabras =  templatePreguntas.length - 1;
-    console.log("longitud", longitudListaPalabras)
+   
 }
 // PASO 1: Login
 
@@ -148,7 +148,7 @@ const botones = () => {
                     //TODO puntos correctos
                     correctPoints += 1;
 
-                    console.log("Aciertos", correctPoints)
+                   
                     points += 1;
                     pointsCounter.innerText = String(points) + "/20";
 
@@ -269,6 +269,6 @@ if (highscoreButton !== null) {
 window.addEventListener("click", (e) => {
     e.preventDefault();
     if (e.target.id !== "buttonPlay") return;
-    console.log(e);
+   
     executeGame();
 }, false);
