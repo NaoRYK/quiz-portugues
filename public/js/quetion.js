@@ -133,9 +133,9 @@ let listaPalabras = [
         texto: "Qual a importância da cultura maker?",
         opcion1: "Que os jovens se divirtam",
         opcion2: "Que as pessoas querem praticar esportes",
-        opcion3: "Que através de desafios, jogos, etc. buscam uma solução para problemas no futuro",
+        opcion3: "Buscam uma solução para problemas no futuro",
         opcion4: "Que os jovens possam terminar seus estudos",
-        respuestaCorrecta: "Que através de desafios, jogos, etc. buscam uma solução para problemas no futuro"
+        respuestaCorrecta: "Buscam uma solução para problemas no futuro"
       },
       pregunta18={
         texto: "O que é educação maker?",
