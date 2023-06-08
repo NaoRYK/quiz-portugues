@@ -5,15 +5,15 @@ let listaPalabras = [
         opcion1: "Eu",
         opcion2: "Você",
         opcion3: "Nós",
-        opcion4: "Todas las anteriores",
-        respuestaCorrecta: "Todas las anteriores"
+        opcion4: "Todas as anteriores",
+        respuestaCorrecta: "Todas as anteriores"
       },
       pregunta2={
         texto: "Que conjugação é a terminação '-ir'?",
         opcion1: "Faz",
         opcion2: "Nós",
         opcion3: "3° conjugação",
-        opcion4: "Ninguna de las anteriores",
+        opcion4: "Ninguna das anteriores",
         respuestaCorrecta: "3° conjugação"
       },
       pregunta3={
@@ -29,7 +29,7 @@ let listaPalabras = [
         opcion1: "Ser",
         opcion2: "Amar",
         opcion3: "Ela",
-        opcion4: "Todas las anteriores",
+        opcion4: "Todas as anteriores",
         respuestaCorrecta: "Ser"
       },
       pregunta5={
@@ -37,8 +37,8 @@ let listaPalabras = [
         opcion1: "Amar",
         opcion2: "Comer",
         opcion3: "Partir",
-        opcion4: "Todas las anteriores",
-        respuestaCorrecta: "Todas las anteriores"
+        opcion4: "Todas as anteriores",
+        respuestaCorrecta: "Todas as anteriores"
       },
       pregunta6={
         texto: "Qual é um pronome indireto?",

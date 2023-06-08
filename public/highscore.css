@@ -15,6 +15,9 @@
     margin-left: 5%;
     font-size: 3rem;
 }
+.back-arrow:hover{
+    cursor: pointer;
+}
 
 .highscore-title {
     display: flex;
