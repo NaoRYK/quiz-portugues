@@ -1,3 +1,34 @@
+const PatchPut=async(name,points,URL)=>{
+    const fetchName = await fetch(`${URL}updateScore/${name}`);
+    const data = await fetchName.json();
+    if(data.length>0 && data[0].hasOwnProperty('puntos')){
+        if(data[0].nombre === name){
+            const pointsUpdate = await fetch(`${URL}updateScore/${name}`,{
+                method:'PATCH',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({
+                    "score":points
+                })
+            })
+        }
+    }else{
+
+        console.log("Not existing", data)
+        const res = await fetch(`${URL}score`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: `${name}`,
+                score: points,
+            })
+        })
+    };
+}
+
 export const login=async(URL,name)=>{
     const res = await fetch(`${URL}login`, {
         method: "POST",
@@ -11,33 +42,11 @@ export const login=async(URL,name)=>{
 };
 
 export const sendData = async (name, points,URL) => {
-
     try{
-        const res = await fetch(`${URL}score`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: `${name}`,
-                score: points,
-            })
-        })
+        PatchPut(name,points,URL);
     }catch(err){
         if(err){
-            setTimeout(async()=>{
-                console.log("error"+err);
-                const res = await fetch(`${URL}score`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        name: `${name}`,
-                        score: points,
-                    })
-                });
-            },1000);
+            PatchPut(name,points,URL);
         }
     }
 };
@@ -81,5 +90,4 @@ export const getData = (container,URL,callback) => {
 
     }, 2000)
 };
-
 

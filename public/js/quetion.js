@@ -16,38 +16,38 @@ let listaPalabras = [
         opcion4: "Ninguna de las anteriores",
         respuestaCorrecta: "3° conjugação"
       },
-      // pregunta3={
-      //   texto: 'Complete a seguinte frase "Eu __ (tomar) Eite com cereais".',
-      //   opcion1: "Beber",
-      //   opcion2: "Tomo",
-      //   opcion3: "Toma",
-      //   opcion4: "Ele",
-      //   respuestaCorrecta: "Tomo"
-      // },
-      // pregunta4={
-      //   texto: "Quais são os verbos irregulares?",
-      //   opcion1: "Ser",
-      //   opcion2: "Amar",
-      //   opcion3: "Ela",
-      //   opcion4: "Todas las anteriores",
-      //   respuestaCorrecta: "Ser"
-      // },
-      // pregunta5={
-      //   texto: "Quais são os verbos regulares?",
-      //   opcion1: "Amar",
-      //   opcion2: "Comer",
-      //   opcion3: "Partir",
-      //   opcion4: "Todas las anteriores",
-      //   respuestaCorrecta: "Todas las anteriores"
-      // },
-      // pregunta6={
-      //   texto: "Qual é um pronome indireto?",
-      //   opcion1: "Aquela",
-      //   opcion2: "Essas",
-      //   opcion3: "Quantos",
-      //   opcion4: "Você",
-      //   respuestaCorrecta: "Quantos"
-      // },
+      pregunta3={
+        texto: 'Complete a seguinte frase "Eu __ (tomar) Eite com cereais".',
+        opcion1: "Beber",
+        opcion2: "Tomo",
+        opcion3: "Toma",
+        opcion4: "Ele",
+        respuestaCorrecta: "Tomo"
+      },
+      pregunta4={
+        texto: "Quais são os verbos irregulares?",
+        opcion1: "Ser",
+        opcion2: "Amar",
+        opcion3: "Ela",
+        opcion4: "Todas las anteriores",
+        respuestaCorrecta: "Ser"
+      },
+      pregunta5={
+        texto: "Quais são os verbos regulares?",
+        opcion1: "Amar",
+        opcion2: "Comer",
+        opcion3: "Partir",
+        opcion4: "Todas las anteriores",
+        respuestaCorrecta: "Todas las anteriores"
+      },
+      pregunta6={
+        texto: "Qual é um pronome indireto?",
+        opcion1: "Aquela",
+        opcion2: "Essas",
+        opcion3: "Quantos",
+        opcion4: "Você",
+        respuestaCorrecta: "Quantos"
+      },
       // pregunta7={
       //   texto: "Qual é um pronome direto?",
       //   opcion1: "Quem",

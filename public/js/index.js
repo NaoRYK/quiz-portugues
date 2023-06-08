@@ -1,4 +1,4 @@
-import { login,sendData,getData } from "./request.js";
+import {login,sendData,getData} from "./request.js"
 
 const URL = "https://portugueados-server.vercel.app/api/v1/";
 
@@ -50,6 +50,47 @@ let correctPoints = 0;
 let templatePreguntas;
 let playerName;
 
+function loadingLogic(){
+    containerArea.setAttribute("style", "display: none !important; ");
+        highscoreArea.setAttribute("style", "display: none !important; ");
+        setTimeout(() => {
+            questionArea.style.display = "flex";
+            setTimeout(()=>{
+                loaderQuestion.setAttribute("style", "display: none !important; ");
+                fatherQuestion.setAttribute("style", "display: flex !important; ");
+            },1000)
+        }, 1000);
+}
+
+async function theNameIsExisting(inputName){
+        const response = await  fetch(`${URL}updateScore/${inputName}`);
+        const data = await response.json();
+        if(data.length >0){
+            console.log("SI")
+
+            if(data[0].nombre===inputName){
+                loadingLogic();
+                preguntas(number);
+            }
+        }else{
+            try {
+                console.log("NO")
+                //login
+                setTimeout(async()=>{
+                    await login(URL,inputName);
+                },1000);
+                
+            } catch (error) {
+                console.error("El error es", error);
+                if(error){
+                    await login(URL,inputName);
+                };
+            };
+            loadingLogic();
+            preguntas(number);
+        }
+}
+
 
 function resetGame(){
     points = 0;
@@ -66,35 +107,13 @@ function executeGame(){
 
     const playGame = async () => {
     
-        
         playerName = userInput.value;
         if(playerName === "") return;
-        containerArea.setAttribute("style", "display: none !important; ");
-        highscoreArea.setAttribute("style", "display: none !important; ");
-        setTimeout(() => {
-            questionArea.style.display = "flex";
-            setTimeout(()=>{
-                loaderQuestion.setAttribute("style", "display: none !important; ");
-                fatherQuestion.setAttribute("style", "display: flex !important; ");
-            },1000)
-        }, 1000);
-        try {
-            
-            //login
-            setTimeout(async()=>{
-                
-                await login(URL,playerName);
-            },1000);
-            
-        } catch (error) {
-            console.error("El error es", error);
-            if(error){
-                login(URL,playerName);
-            };
-        };
-        
-        preguntas(number);
-    
+        try{
+            await theNameIsExisting(playerName);
+        }catch(error){
+            await theNameIsExisting(playerName);
+        }
     };
     playGame()
 }
