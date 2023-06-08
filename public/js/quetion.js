@@ -48,76 +48,118 @@ let listaPalabras = [
         opcion4: "Você",
         respuestaCorrecta: "Quantos"
       },
-      // pregunta7={
-      //   texto: "Qual é um pronome direto?",
-      //   opcion1: "Quem",
-      //   opcion2: "Isto",
-      //   opcion3: "Que",
-      //   opcion4: "Vou",
-      //   respuestaCorrecta: "Quem"
-      // },
-      // pregunta8={
-      //   texto: "Qual é o advérbio interrogativo que indica um lugar?",
-      //   opcion1: "Como",
-      //   opcion2: "Ali",
-      //   opcion3: "Onde",
-      //   opcion4: "Quando",
-      //   respuestaCorrecta: "Onde"
-      // },
-      // pregunta9={
-      //   texto: "Qual advérbio interrogativo é usado para perguntar sobre a maneira como algo é feito?",
-      //   opcion1: "Como",
-      //   opcion2: "Cual",
-      //   opcion3: "Está",
-      //   opcion4: "Qual",
-      //   respuestaCorrecta: "Como"
-      // },
-      // pregunta10={
-      //   texto: "Qual é o advérbio interrogativo que indica o tempo?",
-      //   opcion1: "Quando",
-      //   opcion2: "É",
-      //   opcion3: "Esse",
-      //   opcion4: "Por que",
-      //   respuestaCorrecta: "Quando"
-      // },
-      // pregunta11={
-      //   texto: "Qual é o advérbio interrogativo usado para perguntar sobre a razão ou motivo de algo?",
-      //   opcion1: "Por que",
-      //   opcion2: "Como",
-      //   opcion3: "Aqui",
-      //   opcion4: "Onde",
-      //   respuestaCorrecta: "Por que"
-      // },
-      // pregunta12={
-      //   texto: "Qual é a forma interrogativa correta da frase 'Ela vai ao cinema'?",
-      //   opcion1: "Quando ela vai ao cinema?",
-      //   opcion2: "Porque ela vai ao cinema?",
-      //   opcion3: "Como ela vai ao cinema?",
-      //   opcion4: "Onde ela vai ao cinema?",
-      //   respuestaCorrecta: "Quando ela vai ao cinema?"
-      // },
-      // pregunta13={
-      //   texto: "Complete a seguinte pergunta interrogativa: '__ está o parque'?",
-      //   opcion1: "Onde",
-      //   opcion2: "Como",
-      //   opcion3: "Aqui",
-      //   opcion4: "Por que",
-      //   respuestaCorrecta: "Onde"
-      // },
-      // pregunta14={
-      //   texto: "Qual é o significado do advérbio interrogativo 'por que'?",
-      //   opcion1: "É utilizado para perguntar sobre a causa ou motivo de algo",
-      //   opcion2: "É utilizado para perguntar sobre o tempo de algo",
-      //   opcion3: "É utilizado para perguntar sobre o modo",
-      //   opcion4: "É utilizado para perguntar sobre o lugar",
-      //   respuestaCorrecta: "É utilizado para perguntar sobre a causa ou motivo de algo"
-      // }
-    // pregunta15 = {
-    //     texto: "¿Cual es el primer numerp primo?",
-    //     opcion1: "5",
-    //     opcion2: "11",
-    //     opcion3: "7",
-    //     opcion4: "2",
-    //     respuestaCorrecta: "2",
-    // }
+      pregunta7={
+        texto: "Qual é um pronome direto?",
+        opcion1: "Quem",
+        opcion2: "Isto",
+        opcion3: "Que",
+        opcion4: "Vou",
+        respuestaCorrecta: "Quem"
+      },
+      pregunta8={
+        texto: "Qual é o advérbio interrogativo que indica um lugar?",
+        opcion1: "Como",
+        opcion2: "Ali",
+        opcion3: "Onde",
+        opcion4: "Quando",
+        respuestaCorrecta: "Onde"
+      },
+      pregunta9={
+        texto: "Qual advérbio interrogativo é usado para perguntar sobre a maneira como algo é feito?",
+        opcion1: "Como",
+        opcion2: "Cual",
+        opcion3: "Está",
+        opcion4: "Qual",
+        respuestaCorrecta: "Como"
+      },
+      pregunta10={
+        texto: "Qual é o advérbio interrogativo que indica o tempo?",
+        opcion1: "Quando",
+        opcion2: "É",
+        opcion3: "Esse",
+        opcion4: "Por que",
+        respuestaCorrecta: "Quando"
+      },
+      pregunta11={
+        texto: "Qual é o advérbio interrogativo usado para perguntar sobre a razão ou motivo de algo?",
+        opcion1: "Por que",
+        opcion2: "Como",
+        opcion3: "Aqui",
+        opcion4: "Onde",
+        respuestaCorrecta: "Por que"
+      },
+      
+      pregunta12={
+        texto: "Complete a seguinte pergunta interrogativa: '__ está o parque'?",
+        opcion1: "Onde",
+        opcion2: "Como",
+        opcion3: "Aqui",
+        opcion4: "Por que",
+        respuestaCorrecta: "Onde"
+      },
+      pregunta13={
+        texto: "Qual é o significado do advérbio interrogativo 'por que'?",
+        opcion1: "É utilizado para perguntar sobre a causa ou motivo de algo",
+        opcion2: "É utilizado para perguntar sobre o tempo de algo",
+        opcion3: "É utilizado para perguntar sobre o modo",
+        opcion4: "É utilizado para perguntar sobre o lugar",
+        respuestaCorrecta: "É utilizado para perguntar sobre a causa ou motivo de algo"
+      },
+      pregunta14={
+        texto: "Que é cultura maker?",
+        opcion1: "Nova revolução industrial",
+        opcion2: "Soluções para problemas cotidianos",
+        opcion3: "Surgimento de novas tecnologias",
+        opcion4: "Todos estão corretos",
+        respuestaCorrecta: "Todos estão corretos"
+      },
+      pregunta15={
+        texto: "Outra forma de reconhecer a cultura maker é?",
+        opcion1: "Faça você mesmo",
+        opcion2: "Novas tecnologías",
+        opcion3: "Jovens potenciais",
+        opcion4: "Revolução industrial",
+        respuestaCorrecta: "Faça você mesmo"
+      },
+      pregunta16={
+        texto: "Para que serve a cultura maker?",
+        opcion1: "Para acabar com a superpopulação global",
+        opcion2: "Para dar às pessoas acesso à fabricação de produtos",
+        opcion3: "Para parar o desmatamento",
+        opcion4: "Para que as pessoas queiram uma vida saudável",
+        respuestaCorrecta: "Para dar às pessoas acesso à fabricação de produtos"
+      },
+      pregunta17={
+        texto: "Qual a importância da cultura maker?",
+        opcion1: "Que os jovens se divirtam",
+        opcion2: "Que as pessoas querem praticar esportes",
+        opcion3: "Que através de desafios, jogos, etc. buscam uma solução para problemas no futuro",
+        opcion4: "Que os jovens possam terminar seus estudos",
+        respuestaCorrecta: "Que através de desafios, jogos, etc. buscam uma solução para problemas no futuro"
+      },
+      pregunta18={
+        texto: "O que é educação maker?",
+        opcion1: "A aplicação dos conceitos 'faça você mesmo'",
+        opcion2: "Desenvolvimento ou criatividade",
+        opcion3: "Um espaço de descontração",
+        opcion4: "Uma nova disciplina do ensino secundário para jovens",
+        respuestaCorrecta: "A aplicação dos conceitos 'faça você mesmo'"
+      },
+      pregunta19={
+        texto: "Qual dessas é um tipo de atividade da cultura maker?",
+        opcion1: "Esportes recreativos",
+        opcion2: "Produção de roupas",
+        opcion3: "Passeios com amigos",
+        opcion4: "Relaxamento e descanso",
+        respuestaCorrecta: "Produção de roupas"
+      },
+      pregunta20={
+        texto: "Quais são os benefícios da cultura maker?",
+        opcion1: "Redução de custos",
+        opcion2: "Colaboração",
+        opcion3: "Aumento de produtividade",
+        opcion4: "Todas estão corretas",
+        respuestaCorrecta: "Todas estão corretas"
+      }
+   
 ]
