@@ -50,6 +50,8 @@ let correctPoints = 0;
 let templatePreguntas;
 let playerName;
 
+
+
 function loadingLogic(){
     containerArea.setAttribute("style", "display: none !important; ");
         highscoreArea.setAttribute("style", "display: none !important; ");
@@ -265,6 +267,9 @@ if (highscoreButton !== null) {
     highscoreButton.addEventListener("click", openHighscore, false);
 }
 
+window.addEventListener("submit",(e)=>{
+    e.preventDefault();
+})
 
 window.addEventListener("click", (e) => {
     e.preventDefault();
